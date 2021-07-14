@@ -1,0 +1,185 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="description" content="Calculadora de Exchange internacional - Yasin Sama">
+    <title> Cambio de Divisas - Api</title>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+    <div class="exchange">
+        <lottie-player data-aos="zoom-in-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
+            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+            data-aos-anchor-placement="top-center" src="https://assets8.lottiefiles.com/temp/lf20_qCbIlF.json"
+            background="transparent" speed=".6"
+            style="filter: drop-shadow(2px 4px 6px rgba(0 0 0 / 50%));width: 300px; height: 300px;" loop autoplay>
+        </lottie-player>
+        <h1 class="title">Exchange de Divisas Internacioanles</h1>
+        <p class="subtitle">Por favor escoge una divisa</p>
+        <div class="container " data-aos="zoom-in-down"  data-aos-delay="50" data-aos-duration="1000"
+        data-aos-easing="ease-in-out">
+            <div class="rate">
+                <div class="rater" id="rate">
+                </div>
+                <button onclick="Animate()" class="btn" id="change">Invertir</button>
+            </div>
+            <div class="currency">
+                <select id="currency_one">
+                    <option value="AED">AED</option>
+                    <option value="ARS">ARS</option>
+                    <option value="AUD">AUD</option>
+                    <option value="BGN">BGN</option>
+                    <option value="BRL">BRL</option>
+                    <option value="BSD">BSD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="CLP">CLP</option>
+                    <option value="CNY">CNY</option>
+                    <option value="COP">COP</option>
+                    <option value="CZK">CZK</option>
+                    <option value="DKK">DKK</option>
+                    <option value="DOP">DOP</option>
+                    <option value="EGP">EGP</option>
+                    <option value="EUR">EUR</option>
+                    <option value="FJD">FJD</option>
+                    <option value="GBP">GBP</option>
+                    <option value="GTQ">GTQ</option>
+                    <option value="HKD">HKD</option>
+                    <option value="HRK">HRK</option>
+                    <option value="HUF">HUF</option>
+                    <option value="IDR">IDR</option>
+                    <option value="ILS">ILS</option>
+                    <option value="INR">INR</option>
+                    <option value="ISK">ISK</option>
+                    <option value="JPY">JPY</option>
+                    <option value="KRW">KRW</option>
+                    <option value="KZT">KZT</option>
+                    <option value="MXN">MXN</option>
+                    <option value="MYR">MYR</option>
+                    <option value="NOK">NOK</option>
+                    <option value="NZD">NZD</option>
+                    <option value="PAB">PAB</option>
+                    <option value="PEN">PEN</option>
+                    <option value="PHP">PHP</option>
+                    <option value="PKR">PKR</option>
+                    <option value="PLN">PLN</option>
+                    <option value="PYG">PYG</option>
+                    <option value="RON">RON</option>
+                    <option value="RUB">RUB</option>
+                    <option value="SAR">SAR</option>
+                    <option value="SEK">SEK</option>
+                    <option value="SGD">SGD</option>
+                    <option value="THB">THB</option>
+                    <option value="TRY">TRY</option>
+                    <option value="TWD">TWD</option>
+                    <option value="UAH">UAH</option>
+                    <option value="USD" selected>USD</option>
+                    <option value="UYU">UYU</option>
+                    <option value="VND">VND</option>
+                    <option value="ZAR">ZAR</option>
+
+                </select>
+                <input class="number" type="number" id="amount_one" placeholder="0" value="1">
+            </div>
+
+            <div class="currency">
+                <select id="currency_two">
+                    <option value="AED">AED</option>
+                    <option selected value="ARS">ARS</option>
+                    <option value="AUD">AUD</option>
+                    <option value="BGN">BGN</option>
+                    <option value="BRL">BRL</option>
+                    <option value="BSD">BSD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="CLP">CLP</option>
+                    <option value="CNY">CNY</option>
+                    <option value="COP">COP</option>
+                    <option value="CZK">CZK</option>
+                    <option value="DKK">DKK</option>
+                    <option value="DOP">DOP</option>
+                    <option value="EGP">EGP</option>
+                    <option value="EUR">EUR</option>
+                    <option value="FJD">FJD</option>
+                    <option value="GBP">GBP</option>
+                    <option value="GTQ">GTQ</option>
+                    <option value="HKD">HKD</option>
+                    <option value="HRK">HRK</option>
+                    <option value="HUF">HUF</option>
+                    <option value="IDR">IDR</option>
+                    <option value="ILS">ILS</option>
+                    <option value="INR">INR</option>
+                    <option value="ISK">ISK</option>
+                    <option value="JPY">JPY</option>
+                    <option value="KRW">KRW</option>
+                    <option value="KZT">KZT</option>
+                    <option value="MXN">MXN</option>
+                    <option value="MYR">MYR</option>
+                    <option value="NOK">NOK</option>
+                    <option value="NZD">NZD</option>
+                    <option value="PAB">PAB</option>
+                    <option value="PEN">PEN</option>
+                    <option value="PHP">PHP</option>
+                    <option value="PKR">PKR</option>
+                    <option value="PLN">PLN</option>
+                    <option value="PYG">PYG</option>
+                    <option value="RON">RON</option>
+                    <option value="RUB">RUB</option>
+                    <option value="SAR">SAR</option>
+                    <option value="SEK">SEK</option>
+                    <option value="SGD">SGD</option>
+                    <option value="THB">THB</option>
+                    <option value="TRY">TRY</option>
+                    <option value="TWD">TWD</option>
+                    <option value="UAH">UAH</option>
+                    <option value="USD">USD</option>
+                    <option value="UYU">UYU</option>
+                    <option value="VND">VND</option>
+                    <option value="ZAR">ZAR</option>
+
+                </select>
+                <div class="rater" id="amount_two"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script src="exchange.min.js"></script>
+
+    <script>
+        function Animate() {
+            let element = document.getElementById("change");
+            element.classList.add("spinner");
+        }
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
